@@ -1,0 +1,30 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+deploy:
+  kubectl:
+    manifests:
+      - infra/k8s/ingress-srv.yaml
+      - infra/k8s/main-srv.yaml
+      - infra/k8s/backend/flask-depl.yaml
+      - infra/k8s/cache/redis-depl.yaml
+build:
+  local:
+    push: false
+  artifacts:
+    - image: khaboss/flask
+      context: services/backend/flask
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '*.py'
+            dest: .
+
+    - image: khaboss/redis
+      context: services/cache/redis
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '*.conf'
+            dest: .
