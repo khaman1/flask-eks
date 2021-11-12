@@ -1,7 +1,8 @@
 from flask import Flask
+import os
 
 app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return "<p>Hello, World! Current environment: " + os.environ['CURRENT_ENV'] + "</p>"

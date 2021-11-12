@@ -8,8 +8,11 @@ RUN apk add --no-cache bash git nginx uwsgi uwsgi-python3 cmd:pip3 \
 ####################
 ####################
 # application folder
+ARG CURRENT_ENV=dev
+
 ENV APP_DIR /app
 ENV APP_PORT 80
+ENV CURRENT_ENV $CURRENT_ENV
 
 ####################
 ####################
