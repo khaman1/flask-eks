@@ -7,6 +7,7 @@ deploy:
       - infra/k8s/main-srv.yaml
       - infra/k8s/backend/flask-depl.yaml
       - infra/k8s/cache/redis-depl.yaml
+      - infra/k8s/db/postgres-depl.yaml
 build:
   local:
     push: false
