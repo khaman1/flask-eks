@@ -31,3 +31,12 @@ build:
         manual:
           - src: '*.conf'
             dest: .
+
+    - image: khaboss/postgres
+      context: services/db/postgres
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '*.sql'
+            dest: .

@@ -29,3 +29,18 @@ spec:
             limits:
               cpu: "200m"
               memory: "200Mi"
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-srv
+spec:
+  selector:
+    app: postgres
+  ports:
+    - name: postgres
+      protocol: TCP
+      port: 5432
+      targetPort: 5432

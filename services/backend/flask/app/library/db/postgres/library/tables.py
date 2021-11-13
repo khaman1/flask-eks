@@ -25,7 +25,7 @@ class Tables:
 
     def get_account(self, account_id=''):
         record = self.DB.accounts.get().filter(
-            AccountsModel.account_id.contains(str(account_id))).all()[0].__dict__
+            AccountsModel.account_id == str(account_id)).all()[0].__dict__
 
         return {
             'id': record['id'],

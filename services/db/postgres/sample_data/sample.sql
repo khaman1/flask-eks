@@ -22,7 +22,7 @@
 DROP TABLE IF EXISTS "public"."accounts";
 CREATE TABLE "public"."accounts" (
   "id" int4 NOT NULL,
-  "account_id" int4
+  "account_id" text
 )
 ;
 
