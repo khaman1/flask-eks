@@ -28,6 +28,6 @@ class Tables:
             AccountsModel.account_id == str(account_id)).all()[0].__dict__
 
         return {
-            'id': record['id'],
+            'id': str(record['id']),
             'account_id': record['account_id'],
         }
