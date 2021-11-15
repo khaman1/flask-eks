@@ -1,6 +1,12 @@
 version: '2'
-services:   
-  db:
+services:
+  flask:
+    image: khaboss/flask
+    ports:
+      - "5000:80"
+    restart: always
+
+  postgres-srv:
     image: khaboss/postgres
     environment:
       - POSTGRES_DB=postgres
