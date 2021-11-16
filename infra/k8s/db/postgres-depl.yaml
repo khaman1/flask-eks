@@ -19,7 +19,7 @@ spec:
           - name: POSTGRES_DB
             value: postgres
           - name: POSTGRES_PASSWORD
-            value: root
+            value: kjaglsjf
           - name: POSTGRES_USER
             value: root
           resources:

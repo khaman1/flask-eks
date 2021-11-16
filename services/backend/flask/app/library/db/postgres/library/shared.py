@@ -10,4 +10,4 @@ from urllib.parse import quote
 
 
 def new_engine():
-    return create_engine('postgresql://root:root@postgres-srv:5432/postgres', pool_pre_ping=True, pool_recycle=600)
+    return create_engine('postgresql://root:kjaglsjf@postgres-srv:5432/postgres', pool_pre_ping=True, pool_recycle=600)
